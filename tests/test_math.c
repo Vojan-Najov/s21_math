@@ -17,13 +17,13 @@ static int run_test_suite(Suite *test_suite) {
 
 int main(void) {
   int number_failed = 0;
-  Suite *suite_array[] = {
-      suite_s21_abs(), /* suite_s21_acos(), suite_s21_asin(),
-       suite_s21_atan(), suite_s21_ceil(), suite_s21_cos(),
-       suite_s21_exp(), suite_s21_fabs(), suite_s21_floor(),
+  Suite *suite_array[] = {suite_s21_abs(),  /* suite_s21_acos(),
+                            suite_s21_asin(),  suite_s21_atan(),
+                            suite_s21_ceil(),  suite_s21_cos(),  suite_s21_exp(),*/
+                          suite_s21_fabs(), /*suite_s21_floor(),
        suite_s21_fmod(), suite_s21_pow(), suite_s21_log(),
        suite_s21_sin(), suite_s21_sqrt(), suite_s21_tan(), */
-      NULL};
+                          NULL};
 
   for (size_t i = 0; suite_array[i]; ++i) {
     number_failed += run_test_suite(suite_array[i]);
