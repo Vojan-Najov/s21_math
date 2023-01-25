@@ -11,3 +11,5 @@
   09. double s21_floor(double x)
     - The function return the largest integral value less than or equal to x,
     expressed as a floating-point number.  
+  10. double s21_fmod(double x)
+    - The function compute the floating-point remainder of x / y .  
