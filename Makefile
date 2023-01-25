@@ -3,7 +3,6 @@ TEST = test
 REPORT = gcov_report
 
 INCLD_DIR = ./include
-TEST_INCLD_DIR = ./tests
 
 SRC_DIR = ./src
 TEST_SRC_DIR = ./tests
@@ -23,7 +22,6 @@ TEST_OBJ = $(addprefix $(TEST_OBJ_DIR)/, $(notdir $(TEST_SRC:.c=.o)))
 GCOV_OBJ = $(addprefix $(GCOV_OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
 
 INCLD = $(wildcard $(INCLD_DIR)/*.h)
-TEST_INCLD = $(wildcard $(TEST_INCLD_DIR)/*.h)
 
 TEST_LIBS = -lcheck -lm
 
@@ -58,9 +56,9 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INCLD)
 	@$(MKDIR) $(@D)
 	$(CC) $(CFLAGS) -I$(INCLD_DIR) -c $< -o $@
 
-$(TEST_OBJ_DIR)/%.o: $(TEST_SRC_DIR)/%.c  $(TEST_INCLD)
+$(TEST_OBJ_DIR)/%.o: $(TEST_SRC_DIR)/%.c
 	@$(MKDIR) $(@D)
-	$(CC) $(CFLAGS) -I$(INCLD_DIR) -I$(TEST_INCLD_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) -I$(INCLD_DIR) -c $< -o $@
 
 $(GCOV_OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INCLD)
 	@$(MKDIR) $(@D)
@@ -80,7 +78,7 @@ fclean: clean
 
 lint:
 	cp materials/linters/.clang-format $(SRC_DIR)/.
-	clang-format -i $(SRC) $(TEST_SRC) $(INCLD) $(TEST_INCLD)
+	clang-format -i $(SRC) $(TEST_SRC) $(INCLD) 
 	$(RM) $(SRC_DIR)/.clang-format
 
 re: fclean all
