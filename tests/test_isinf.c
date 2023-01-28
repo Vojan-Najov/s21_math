@@ -43,6 +43,15 @@ START_TEST(inf) {
 }
 END_TEST
 
+START_TEST(infinity) {
+  double x;
+  x = S21_INFINITY;
+  ck_assert_double_infinite(x);
+  x = -S21_INFINITY;
+  ck_assert_double_infinite(x);
+}
+END_TEST
+
 Suite *suite_s21_isinf(void) {
   Suite *s;
   TCase *tc;
@@ -55,6 +64,7 @@ Suite *suite_s21_isinf(void) {
     tcase_add_test(tc, isnan);
     tcase_add_test(tc, zero);
     tcase_add_test(tc, inf);
+    tcase_add_test(tc, infinity);
     suite_add_tcase(s, tc);
   }
 

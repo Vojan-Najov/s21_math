@@ -38,6 +38,15 @@ START_TEST(inf) {
 }
 END_TEST
 
+START_TEST(not_a_number) {
+  double x;
+  x = S21_NAN;
+  ck_assert_double_nan(x);
+  x = -S21_NAN;
+  ck_assert_double_nan(x);
+}
+END_TEST
+
 Suite *suite_s21_isnan(void) {
   Suite *s;
   TCase *tc;
@@ -50,6 +59,7 @@ Suite *suite_s21_isnan(void) {
     tcase_add_test(tc, isnan);
     tcase_add_test(tc, zero);
     tcase_add_test(tc, inf);
+    tcase_add_test(tc, not_a_number);
     suite_add_tcase(s, tc);
   }
 
