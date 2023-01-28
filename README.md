@@ -13,3 +13,5 @@
     expressed as a floating-point number.  
   10. double s21_fmod(double x)
     - The function compute the floating-point remainder of x / y .  
+  14. doube s21_sqrt(double x)
+    - The function compute the non-negative square root of x.

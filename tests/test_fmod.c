@@ -1,7 +1,7 @@
-#include <math.h>
+#include "test_math.h"
 #include <check.h>
 #include <float.h>
-#include "test_math.h"
+#include <math.h>
 
 #include "s21_math.h"
 
