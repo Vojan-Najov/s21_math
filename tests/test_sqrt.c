@@ -7,72 +7,72 @@
 
 START_TEST(zero) {
   double x;
-  long double res;
-  long double res21;
+  double res;
+  double res21;
 
   x = 0.0;
   res = sqrt(x);
   res21 = s21_sqrt(x);
-  ck_assert_ldouble_eq(res, res21);
+  ck_assert_double_eq(res, res21);
   x = -0.0;
   res = sqrt(x);
   res21 = s21_sqrt(x);
-  ck_assert_ldouble_eq(res, res21);
+  ck_assert_double_eq(res, res21);
 }
 END_TEST
 
 START_TEST(infinity) {
   double x;
-  long double res;
-  long double res21;
+  double res;
+  double res21;
 
   x = INFINITY;
   res = sqrt(x);
   res21 = s21_sqrt(x);
-  ck_assert_ldouble_infinite(res);
-  ck_assert_ldouble_infinite(res21);
+  ck_assert_double_infinite(res);
+  ck_assert_double_infinite(res21);
 
   x = -INFINITY;
   res = sqrt(x);
   res21 = s21_sqrt(x);
-  ck_assert_ldouble_nan(res);
-  ck_assert_ldouble_nan(res21);
+  ck_assert_double_nan(res);
+  ck_assert_double_nan(res21);
 }
 END_TEST
 
 START_TEST(not_a_number) {
   double x;
-  long double res;
-  long double res21;
+  double res;
+  double res21;
 
   x = nan("");
   res = sqrt(x);
   res21 = s21_sqrt(x);
-  ck_assert_ldouble_nan(res);
-  ck_assert_ldouble_nan(res21);
+  ck_assert_double_nan(res);
+  ck_assert_double_nan(res21);
 
   x = -nan("");
   res = sqrt(x);
   res21 = s21_sqrt(x);
-  ck_assert_ldouble_nan(res);
-  ck_assert_ldouble_nan(res21);
+  ck_assert_double_nan(res);
+  ck_assert_double_nan(res21);
 }
 END_TEST
 
 START_TEST(positive_double) {
   double x = 123.4;
-  long double res = sqrt(x);
-  long double res21 = s21_sqrt(x);
-  ck_assert_ldouble_eq_tol(res, res21, 1e-6);
+  double res = sqrt(x);
+  double res21 = s21_sqrt(x);
+  ck_assert_double_eq_tol(res, res21, 1e-6);
 }
 END_TEST
 
 START_TEST(negative_double) {
   double x = -123.4;
-  long double res = sqrt(x);
-  long double res21 = s21_sqrt(x);
-  ck_assert_ldouble_nan(res);
-  ck_assert_ldouble_nan(res21);
+  double res = sqrt(x);
+  double res21 = s21_sqrt(x);
+  ck_assert_double_nan(res);
+  ck_assert_double_nan(res21);
 }
 END_TEST
 
@@ -87,15 +87,15 @@ static size_t len1 = sizeof(nums1) / sizeof(double);
 
 START_TEST(small_nums) {
   double num;
-  long double res;
-  long double res21;
-  long double eps = 1.0e-6;
+  double res;
+  double res21;
+  double eps = 1.0e-6;
 
   for (size_t i = 0; i < len1; ++i) {
     num = nums1[i];
     res = sqrt(num);
     res21 = s21_sqrt(num);
-    ck_assert_ldouble_eq_tol(res, res21, eps);
+    ck_assert_double_eq_tol(res, res21, eps);
   }
 }
 END_TEST
@@ -141,31 +141,31 @@ static size_t len2 = sizeof(nums2) / sizeof(double);
 
 START_TEST(nums) {
   double num;
-  long double res;
-  long double res21;
-  long double eps = 1.0e-6;
+  double res;
+  double res21;
+  double eps = 1.0e-6;
 
   for (size_t i = 0; i < len2; ++i) {
     num = nums2[i];
     res = sqrt(num);
     res21 = s21_sqrt(num);
-    ck_assert_ldouble_eq_tol(res, res21, eps);
+    ck_assert_double_eq_tol(res, res21, eps);
   }
 }
 END_TEST
 
 START_TEST(limits) {
   double num;
-  long double res;
-  long double res21;
+  double res;
+  double res21;
   char str1[512];
   char str2[512];
 
   num = DBL_MAX;
   res = sqrt(num);
   res21 = s21_sqrt(num);
-  sprintf(str1, "%Lf", res);
-  sprintf(str2, "%Lf", res21);
+  sprintf(str1, "%f", res);
+  sprintf(str2, "%f", res21);
   ck_assert(strncmp(str1, str2, 16) == 0);
 }
 END_TEST

@@ -12,6 +12,8 @@
     - The function return the largest integral value less than or equal to x,
     expressed as a floating-point number.  
   10. double s21_fmod(double x)
-    - The function compute the floating-point remainder of x / y .  
+    - The function compute the floating-point remainder of x / y.  
+  11. double s21_log(double x)
+    - The function compute the value of the natural logarithm of argument x. 
   14. doube s21_sqrt(double x)
     - The function compute the non-negative square root of x.
