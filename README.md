@@ -6,6 +6,8 @@
   05. double s21_ceil(double x)
     - The function return the smallest integral value greater than or equal to x,
     expressed as a floating-point number.  
+  06. double s21_cos(double x)
+    - The function compute the cosine of x (measured in radians).
   08. double s21_fabs(double x)
     - The function compute the absolute value of a floating-point number.
   09. double s21_floor(double x)
