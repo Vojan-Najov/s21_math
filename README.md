@@ -21,3 +21,5 @@
     - The function compute the sine of x (measured in radians).
   14. doube s21_sqrt(double x)
     - The function compute the non-negative square root of x.
+  15. double tan(double x)
+    - The function compute the tangent of x (measured in radians).

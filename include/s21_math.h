@@ -26,7 +26,7 @@ double s21_log(double x);
 long double s21_pow(double base, double exp);
 double s21_sin(double x);
 double s21_sqrt(double x);
-long double s21_tan(double x);
+double s21_tan(double x);
 long double s21_trunc(double num);
 
 int s21_isnan(double x);

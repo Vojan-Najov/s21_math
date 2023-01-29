@@ -32,6 +32,6 @@ Suite *suite_s21_sin(void);
 Suite *suite_s21_sqrt(void);
 Suite *suite_s21_isnan(void);
 Suite *suite_s21_isinf(void);
-// Suite *suite_s21_tan(void);
+Suite *suite_s21_tan(void);
 
 #endif
