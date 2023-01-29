@@ -433,6 +433,61 @@ START_TEST(negative_dbl_min) {
 }
 END_TEST
 
+START_TEST(infinity) {
+  double x;
+  double y;
+  long double ret;
+  long double ret21;
+
+  x = INFINITY;
+  y = -1;
+  ret = fmod(x, y);
+  ret21 = s21_fmod(x, y);
+  ck_assert_ldouble_nan(ret);
+  ck_assert_ldouble_nan(ret21);
+
+  x = -1;
+  y = -INFINITY;
+  ret = fmod(x, y);
+  ret21 = s21_fmod(x, y);
+  ck_assert_ldouble_eq(ret, ret21);
+
+  x = 0;
+  y = INFINITY;
+  ret = fmod(x, y);
+  ret21 = s21_fmod(x, y);
+  ck_assert_ldouble_eq(ret, ret21);
+
+  x = nan("");
+  y = INFINITY;
+  ret = fmod(x, y);
+  ret21 = s21_fmod(x, y);
+  ck_assert_ldouble_nan(ret);
+  ck_assert_ldouble_nan(ret21);
+
+  x = INFINITY;
+  y = nan("");
+  ret = fmod(x, y);
+  ret21 = s21_fmod(x, y);
+  ck_assert_ldouble_nan(ret);
+  ck_assert_ldouble_nan(ret21);
+
+  x = nan("");
+  y = -INFINITY;
+  ret = fmod(x, y);
+  ret21 = s21_fmod(x, y);
+  ck_assert_ldouble_nan(ret);
+  ck_assert_ldouble_nan(ret21);
+
+  x = -INFINITY;
+  y = nan("");
+  ret = fmod(x, y);
+  ret21 = s21_fmod(x, y);
+  ck_assert_ldouble_nan(ret);
+  ck_assert_ldouble_nan(ret21);
+}
+END_TEST
+
 Suite *suite_s21_fmod(void) {
   Suite *s;
   TCase *tc;
@@ -464,6 +519,7 @@ Suite *suite_s21_fmod(void) {
     tcase_add_test(tc, positive_S21_MAX_DOUBLE);
     tcase_add_test(tc, positive_dbl_min);
     tcase_add_test(tc, negative_dbl_min);
+    tcase_add_test(tc, infinity);
     suite_add_tcase(s, tc);
   }
   return (s);

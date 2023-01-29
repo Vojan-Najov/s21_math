@@ -20,6 +20,8 @@ double s21_log(double x) {
     errno = ERANGE;
     result = -1.0 / 0.0;
   } else {
+    /* INVARIANT: e^result * z^t = x */
+    /* BEGIN: result = 0, z = x, t = 1.0. END: z^t == 1.0 => e^result == y */
     while (z < 1.0 / S21_E || z > S21_E || t < -eps || t > eps) {
       if (z < 1.0 / S21_E) {
         z *= S21_E;
