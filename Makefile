@@ -40,7 +40,7 @@ $(NAME): $(OBJ)
 all: $(NAME) $(TEST)
 
 $(TEST): $(NAME) $(TEST_OBJ)
-	$(CC) $(TEST_OBJ) $(TEST_LIBS) -L. $(NAME) -o $@
+	$(CC) $(TEST_OBJ) -o $@ $(TEST_LIBS) -L. $(NAME)
 
 $(REPORT): $(GCOV_OBJ) $(TEST_OBJ)
 	$(CC) $(GCOV_FLAGS) $(GCOV_OBJ) $(TEST_OBJ)  \
