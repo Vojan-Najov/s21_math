@@ -77,7 +77,7 @@ fclean: clean
 	$(RM) -r $(GCOV_DIR)
 
 lint:
-	cp materials/linters/.clang-format $(SRC_DIR)/.
+	cp docs/materials/linters/.clang-format $(SRC_DIR)/.
 	clang-format -i $(SRC) $(TEST_SRC) $(INCLD) 
 	$(RM) $(SRC_DIR)/.clang-format
 
