@@ -2,7 +2,7 @@
 
 #include "s21_math.h"
 
-double s21_fmod(double x, double y) {
+long double s21_fmod(double x, double y) {
   double result;
   union {
     double num;

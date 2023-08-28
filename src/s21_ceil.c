@@ -4,7 +4,7 @@
 
 static double toint = 4503599627370496.0; /* 2^52 */
 
-double s21_ceil(double x) {
+long double s21_ceil(double x) {
   double result;
   double fractpart;
   union {

@@ -1,6 +1,6 @@
 #include "s21_math.h"
 
-double s21_tan(double x) {
+long double s21_tan(double x) {
   double result = 0.0;
   double eps = 1.0e-8;
 

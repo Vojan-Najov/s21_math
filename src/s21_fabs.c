@@ -2,7 +2,7 @@
 
 #include "s21_math.h"
 
-double s21_fabs(double x) {
+long double s21_fabs(double x) {
   union {
     double num;
     struct double_bits {

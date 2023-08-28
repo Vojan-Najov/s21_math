@@ -1,6 +1,6 @@
 #include "s21_math.h"
 
-double s21_sin(double x) {
+long double s21_sin(double x) {
   double result;
   double k;
   double a;

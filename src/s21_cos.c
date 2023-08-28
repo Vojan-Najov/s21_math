@@ -1,6 +1,6 @@
 #include "s21_math.h"
 
-double s21_cos(double x) {
+long double s21_cos(double x) {
   double result;
   double k;
   double a;

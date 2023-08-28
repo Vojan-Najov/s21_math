@@ -3,7 +3,7 @@
 
 #include "s21_math.h"
 
-double s21_sqrt(double x) {
+long double s21_sqrt(double x) {
   double eps = 1.0e-16;
   union {
     double x;

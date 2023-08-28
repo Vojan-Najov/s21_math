@@ -2,7 +2,7 @@
 
 #include "s21_math.h"
 
-double s21_log(double x) {
+long double s21_log(double x) {
   double result = 0.0;
   double z = x;
   double t = 1.0;
